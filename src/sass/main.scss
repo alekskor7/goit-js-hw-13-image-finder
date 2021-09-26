@@ -1,0 +1,113 @@
+html {
+  scroll-behavior: smooth; /* свойство scroll-behavior не наследуется, применяется к прокручиваемым блокам */
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+}
+
+.search-form {
+  width: 145px;
+  margin: 50px auto;
+}
+
+.gallery {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: -20px;
+  padding: 0;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.7s;
+}
+
+.img-item {
+  width: 300px;
+  height: 210px;
+  transition: all 0.7s;
+}
+
+.gallery-item:hover {
+  cursor: pointer;
+  border: 2px solid rgb(44, 35, 168);
+}
+
+.gallery-item:hover .img-item {
+  transform: scale(1.15);
+  transition: all 0.3s;
+}
+
+.img-wrapper {
+  width: 300px;
+  height: 210px;
+  overflow: hidden;
+}
+
+.stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 10px 10px;
+  overflow: hidden;
+}
+
+.stats-item {
+  text-align: center;
+  width: 50%;
+  margin-bottom: 5px;
+}
+
+.gallery-item {
+  margin: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 300px;
+  width: calc(100% / 4 - 66px);
+  overflow: hidden;
+}
+
+.photo-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+
+body .basicLightbox {
+  opacity: 0;
+}
+
+.img-lightbox {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.7s;
+}
+
+.gallery.is-hidden {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.to-top {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+  opacity: 1;
+  transition: all 0.7s;
+}
+
+.to-top.is-hidden {
+  opacity: 0;
+}
