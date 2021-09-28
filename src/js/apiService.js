@@ -3,6 +3,7 @@ import galleryCard from '../templates/galleryCard.hbs';
 import { error } from '../../node_modules/@pnotify/core'; 
 import * as basicLightbox from '../../node_modules/basiclightbox';
 import "../../node_modules/basiclightbox/dist/basicLightbox.min.css";
+import "../../node_modules/basiclightbox/dist/basicLightbox.min.js";
 import '../../node_modules/@pnotify/core/dist/BrightTheme.css';
 import "../../node_modules/@pnotify/core/dist/PNotify.css";
 import throtle from '../../node_modules/lodash.throttle/index.js'
@@ -42,7 +43,11 @@ const renderFn = () => {
 
 refs.form.addEventListener('submit', e => {
     e.preventDefault();
-    refs.gallery.innerHTML = '';
+    const validationInputValue = refs.input.value.trim()
+    if (validationInputValue) {
+        refs.gallery.innerHTML = '';
+    refs.pageNumber = 1;
+    count = 0;
     refs.gallery.classList.add('is-hidden');
     refs.preloadRef.classList.remove('is-hidden');
     renderFn();
@@ -50,6 +55,8 @@ refs.form.addEventListener('submit', e => {
         refs.preloadRef.classList.add('is-hidden');
         refs.gallery.classList.remove('is-hidden');
     }, 1000);
+    }
+    
 })
 
 
