@@ -28,9 +28,12 @@
   },
   "dependencies": {
     "@pnotify/core": "^5.2.0",
+    "axios": "^0.21.4",
     "basiclightbox": "^5.0.4",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "notiflix": "^3.0.2",
+    "simplelightbox": "^2.8.1"
   }
 }

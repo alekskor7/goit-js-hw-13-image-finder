@@ -95,11 +95,6 @@ body .basicLightbox {
   transition: all 0.7s;
 }
 
-.gallery.is-hidden {
-  opacity: 0;
-  transform: scale(0.7);
-}
-
 .to-top {
   position: fixed;
   bottom: 10px;
