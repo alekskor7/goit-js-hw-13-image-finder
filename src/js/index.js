@@ -16,15 +16,6 @@ import 'simplelightbox/src/simple-lightbox.scss';
 
 const gallery = new SimpleLightbox('.gallery a');
 
-// const observer = new IntersectionObserver((entries, observer) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       renderFn();
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// });
-
 bindEvents();
 
 // functions
@@ -68,6 +59,7 @@ function appendGalleryMarkup(hits) {
   gallery.refresh();
 }
 
+//  Плавный скролл
 window.addEventListener('scroll', throtle(() => { 
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         if (clientHeight + scrollTop >= scrollHeight-500) {
@@ -81,3 +73,12 @@ window.addEventListener('scroll', throtle(() => {
         }
         }, 300)
 );
+//  Бесконечный скролл
+// const observer = new IntersectionObserver((entries, observer) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       renderFn();
+//       observer.unobserve(entry.target);
+//     }
+//   });
+// });
